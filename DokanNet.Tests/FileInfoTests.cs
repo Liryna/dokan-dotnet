@@ -1493,7 +1493,6 @@ namespace DokanNet.Tests
             fixture.ExpectSetFileAttributes(path, FileAttributes.Normal);
             fixture.ExpectSetFileTime(path);
             fixture.ExpectGetVolumeInformation(DokanOperationsFixture.VOLUME_LABEL, DokanOperationsFixture.FILESYSTEM_NAME, 256);
-            fixture.ExpectFindStreams(destinationPath, new FileInformation[0]);
             fixture.PermitGetFileInformationToFail(destinationBackupPath, NtStatus.ObjectPathNotFound, true);
             fixture.PermitOpenDirectory(DokanOperationsFixture.RootName, ReadDirectoryAccess, ReadWriteShare, attributes: FileAttributes.Normal);
             fixture.ExpectCreateFile(destinationBackupPath, WriteDirectoryAccess, FileShare.ReadWrite, FileMode.Open);
@@ -1536,7 +1535,6 @@ namespace DokanNet.Tests
             fixture.ExpectSetFileAttributes(path, FileAttributes.Normal);
             fixture.ExpectSetFileTime(path);
             fixture.ExpectGetVolumeInformation(DokanOperationsFixture.VOLUME_LABEL, DokanOperationsFixture.FILESYSTEM_NAME, 256);
-            fixture.ExpectFindStreams(destinationPath, new FileInformation[0]);
             fixture.PermitGetFileInformationToFail(destinationBackupPath, NtStatus.ObjectPathNotFound, true);
             fixture.PermitOpenDirectory(fixture.DestinationDirectoryName.AsRootedPath(), ReadDirectoryAccess, ReadWriteShare, attributes: FileAttributes.Normal);
             fixture.ExpectCreateFile(destinationBackupPath, WriteDirectoryAccess, FileShare.ReadWrite, FileMode.Open);
